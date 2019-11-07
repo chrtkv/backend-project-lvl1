@@ -10,4 +10,4 @@ const interaction = () => {
   greetings(name);
 };
 
-export { interaction };
+export { interaction as default };
