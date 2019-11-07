@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import interaction from '..';
+import game from '..';
 
-interaction();
+game();
