@@ -24,8 +24,7 @@
     "project",
     "brain",
     "games",
-    "level",
-    "1"
+    "level"
   ],
   "author": "Kirill Chertkov",
   "license": "ISC",
@@ -38,5 +37,8 @@
     "@babel/core": "^7.7.2",
     "@babel/node": "^7.7.0",
     "@babel/preset-env": "^7.7.1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
