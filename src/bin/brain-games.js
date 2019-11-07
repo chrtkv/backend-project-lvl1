@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { interaction } from '..';
+import interaction from '..';
 
 interaction();
