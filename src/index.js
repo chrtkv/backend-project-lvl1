@@ -1,21 +1,19 @@
 import readlineSync from 'readline-sync';
-
-// welcome the user
-const greetings = (name) => {
-  console.log(`Hello, ${name}`);
-};
-
-// interact with the user
-const interaction = () => {
-  // get user name
-  const name = readlineSync.question('May I have your name? ');
-  greetings(name);
-};
+import { welcome } from './common';
+import brainEven from './even';
 
 // main function
 const game = () => {
-  console.log('Welcome to the Brain Games!');
-  interaction();
+  welcome();
+  const selectedGame = readlineSync.question(`Please, select game number.
+  1. Even Game
+  `);
+  switch (selectedGame) {
+    case '1':
+      brainEven();
+      break;
+    default:
+      console.log('Sorry, enter correct game number');
+  }
 };
-
 export default game;
