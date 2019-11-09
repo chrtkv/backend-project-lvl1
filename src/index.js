@@ -1,13 +1,15 @@
-import readlineSync from 'readline-sync';
-import { welcome } from './common';
+import * as cm from './common';
 import brainEven from './even';
 
 // main function
 const game = () => {
-  welcome();
-  const selectedGame = readlineSync.question(`Please, select game number.
+  // welcome to the gamer
+  cm.welcome();
+  // show game menu
+  const selectedGame = cm.ask(`Please, select game number.
   1. Even Game
   `);
+  // run appropriate game
   switch (selectedGame) {
     case '1':
       brainEven();
@@ -16,4 +18,6 @@ const game = () => {
       console.log('Sorry, enter correct game number');
   }
 };
+
+
 export default game;
