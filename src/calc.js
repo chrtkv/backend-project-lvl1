@@ -21,15 +21,17 @@ const brainCalc = () => {
   let secondNumber = cm.getRandomNum();
 
   // integer division primitive realization
-  // check that the second number isn't zero
-  secondNumber = secondNumber === 0 ? 1 : secondNumber;
-  // increase it while division remaind isn't equal zero
-  while (firstNumber % secondNumber !== 0) {
-    // check that the first number is greater than the second, if not swap them
-    if (secondNumber > firstNumber) {
-      [secondNumber, firstNumber] = [firstNumber, secondNumber];
-    } else {
-      firstNumber += 1;
+  if (operationNumber === 3) {
+    // check that the second number isn't zero
+    secondNumber = secondNumber === 0 ? 1 : secondNumber;
+    // increase it while division remaind isn't equal zero
+    while (firstNumber % secondNumber !== 0) {
+      // check that the first number is greater than the second, if not swap them
+      if (secondNumber > firstNumber) {
+        [secondNumber, firstNumber] = [firstNumber, secondNumber];
+      } else {
+        firstNumber += 1;
+      }
     }
   }
 
