@@ -3,6 +3,7 @@ import brainEven from './games/even';
 import brainCalc from './games/calc';
 import brainGcd from './games/gcd';
 import brainProgression from './games/progression';
+import brainPrime from './games/prime';
 
 // list of the games
 const games = [
@@ -29,6 +30,12 @@ const games = [
     name: 'progression',
     fn: brainProgression,
     rules: '\nGame Rules 📶\nWhat number is missing in the progression?\n',
+  },
+  {
+    number: '5',
+    name: 'prime',
+    fn: brainPrime,
+    rules: `\nGame Rules 🔢\nAnswer ${cm.highlight('"yes"')} if the given number is prime. Otherwise answer ${cm.highlight('"no"')}.\n`,
   },
 ];
 
