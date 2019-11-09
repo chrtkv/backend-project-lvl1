@@ -6,11 +6,14 @@
 
 # Installation
 ```
-npm install -g be-project-lvl1-chertkov@0.0.1
+npm install -g be-project-lvl1-chertkov
 ```
 [![Installation](gif/install.gif)](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ)
-# Demo
+# Even Game Demo
 ### Successful Game
 [![Successful game](gif/success.gif)](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)
 ### Failed Game
 [![Failed game](gif/fail.gif)](https://asciinema.org/a/NPkh5hhgYdbXohQJXYTifGJsH)
+# Calc Game Demo
+[![Successful game](gif/calc_success.gif)](https://asciinema.org/a/ygiNqkCbaGPZOBkCOVyHfiTN8)
+
