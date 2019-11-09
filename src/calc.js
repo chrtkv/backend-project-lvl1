@@ -1,0 +1,44 @@
+import * as cm from './common';
+
+const brainCalc = () => {
+  // define operations
+  const operations = [
+    { fn: cm.addition, sign: '+' },
+    { fn: cm.multiplication, sign: '*' },
+    { fn: cm.substraction, sign: '-' },
+    { fn: cm.division, sign: '/' },
+  ];
+
+  // generate operation number
+  const operationNumber = cm.getRandomNum(4);
+  // select operation function
+  const operation = operations[operationNumber].fn;
+  // select appropriate sign
+  const operationSign = operations[operationNumber].sign;
+  // generate first random number
+  let firstNumber = cm.getRandomNum();
+  // generate second random number
+  let secondNumber = cm.getRandomNum();
+
+  // integer division primitive realization
+  // check that the second number isn't zero
+  secondNumber = secondNumber === 0 ? 1 : secondNumber;
+  // increase it while division remaind isn't equal zero
+  while (firstNumber % secondNumber !== 0) {
+    // check that the first number is greater than the second, if not swap them
+    if (secondNumber > firstNumber) {
+      [secondNumber, firstNumber] = [firstNumber, secondNumber];
+    } else {
+      firstNumber += 1;
+    }
+  }
+
+  // generate expression string
+  const expression = `${firstNumber} ${operationSign} ${secondNumber}`;
+  // calculate correct answer
+  const correctAnswer = operation(firstNumber, secondNumber).toString();
+
+  return { question: expression, answer: correctAnswer };
+};
+
+export default brainCalc;
