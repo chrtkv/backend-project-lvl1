@@ -1,13 +1,14 @@
 {
   "name": "be-project-lvl1-chertkov",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "description": "The first Hexlet project",
   "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-gcd": "dist/bin/brain-gcd.js"
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "files": [
     "dist"

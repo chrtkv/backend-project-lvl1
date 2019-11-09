@@ -16,8 +16,8 @@ const hlImportant = chalk.bold.blueBright;
 
 // math functions
 
-// generate random number
-const getRandomNum = (max = 100) => Math.floor(Math.random() * max);
+// generate random number. Add one to max value cause Math.random excludes one from results.
+const getRandomNum = (max = 100) => Math.floor(Math.random() * (max + 1));
 // check if number is even
 const isEven = (num) => (num % 2) === 0;
 // addition
@@ -43,6 +43,14 @@ const gcd = (a, b) => {
   };
 
   return findGCD(a, b, divisor);
+};
+// make progression
+const makeProgression = (start, step, size = 10) => {
+  const result = [];
+  for (let i = start; result.length < size; i += step) {
+    result.push(i);
+  }
+  return result;
 };
 
 
@@ -83,5 +91,5 @@ export {
   hlSuccess, hlFail, hlImportant, getRandomNum,
   isEven, addition, multiplication, substraction,
   division, isAnswerCorrect, message, finalMessage,
-  question, answer, gcd,
+  question, answer, gcd, makeProgression,
 };
