@@ -1,10 +1,9 @@
-import readlineSync from 'readline-sync';
-import { getUserName, greetings } from './common';
+import * as cm from './common';
 
 
 // print game rules
 const rules = () => {
-  console.log('\nGame Rules:\nAnswer "yes" if the number is even, otherwise answer "no".\n');
+  console.log(`\nGame Rules 🎲\nAnswer ${cm.highlight('"yes"')} if the number is even, otherwise answer ${cm.highlight('"no"')}.\n`);
 };
 
 // generate random number
@@ -15,26 +14,29 @@ const isEven = (num) => (num % 2) === 0;
 
 const brainEven = () => {
   rules();
-  const name = getUserName();
-  greetings(name);
+  const name = cm.getUserName();
+  cm.greetings(name);
 
   let attempts = 3;
 
   while (attempts > 0) {
     const number = getRandomNum();
     console.log(`\nQuestion: ${number}`);
-    const answer = readlineSync.question('Your answer: ');
+    const answer = cm.ask('Your answer: ');
     const correctAnswer = isEven(number) ? 'yes' : 'no';
     if (answer === correctAnswer) {
-      console.log('Correct!');
+      const correct = cm.hlSuccess('Correct!🔥');
+      console.log(correct);
       attempts -= 1;
     } else {
-      console.log(`\n'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n\nLet's try again, ${name}!`);
+      const wrong = cm.hlFail(`\n"${cm.highlight(answer)}" is wrong answer. Correct answer was "${cm.highlight(correctAnswer)}". 😔\n`);
+      console.log(wrong);
+      console.log(cm.hlSuccess(`Let's try again, ${name}! 💪\n`));
       return;
     }
   }
-
-  console.log(`\nCongratulations, ${name}!`);
+  const successMessage = `\nCongratulations, ${name}! 💪\n`;
+  console.log(successMessage);
 };
 
 export default brainEven;
