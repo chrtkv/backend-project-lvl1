@@ -16,4 +16,6 @@ npm install -g be-project-lvl1-chertkov
 [![Failed game](gif/fail.gif)](https://asciinema.org/a/NPkh5hhgYdbXohQJXYTifGJsH)
 # Calc Game Demo
 [![Successful game](gif/calc_success.gif)](https://asciinema.org/a/ygiNqkCbaGPZOBkCOVyHfiTN8)
+# GCD Game Demo
+[![Successful game](gif/gcd_success.gif)](https://asciinema.org/a/X04Ax7tMTJ5YcjGYAnxIGm1iK)
 
