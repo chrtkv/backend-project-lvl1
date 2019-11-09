@@ -1,4 +1,4 @@
-import * as cm from './common';
+import * as cm from '../common';
 
 
 const brainEven = () => {

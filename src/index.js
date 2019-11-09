@@ -1,6 +1,6 @@
 import * as cm from './common';
-import brainEven from './even';
-import brainCalc from './calc';
+import brainEven from './games/even';
+import brainCalc from './games/calc';
 
 // list of the games
 const games = [
