@@ -2,6 +2,7 @@ import * as cm from './common';
 import brainEven from './games/even';
 import brainCalc from './games/calc';
 import brainGcd from './games/gcd';
+import brainProgression from './games/progression';
 
 // list of the games
 const games = [
@@ -22,6 +23,12 @@ const games = [
     name: 'gcd',
     fn: brainGcd,
     rules: '\nGame Rules 💭\nFind the greatest common divisor of the given numbers.\n',
+  },
+  {
+    number: '4',
+    name: 'progression',
+    fn: brainProgression,
+    rules: '\nGame Rules 📶\nWhat number is missing in the progression?\n',
   },
 ];
 
@@ -73,18 +80,10 @@ const main = () => {
   // select number of attempts
   const attempts = 3;
   // run appropriate game
-  switch (selectedGame) {
-    case '1':
-      game(selectedGame, attempts);
-      break;
-    case '2':
-      game(selectedGame, attempts);
-      break;
-    case '3':
-      game(selectedGame, attempts);
-      break;
-    default:
-      console.log('Sorry, enter correct game number');
+  if (games.find((gameItem) => gameItem.number === selectedGame)) {
+    game(selectedGame, attempts);
+  } else {
+    console.log('Sorry, enter correct game number');
   }
 };
 

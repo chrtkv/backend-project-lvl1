@@ -10,7 +10,7 @@ const brainCalc = () => {
   ];
 
   // generate operation number
-  const operationNumber = cm.getRandomNum(4);
+  const operationNumber = cm.getRandomNum(3);
   // select operation function
   const operation = operations[operationNumber].fn;
   // select appropriate sign
