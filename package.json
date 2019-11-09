@@ -1,6 +1,6 @@
 {
   "name": "be-project-lvl1-chertkov",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The first Hexlet project",
   "main": "dist/index.js",
   "bin": {
