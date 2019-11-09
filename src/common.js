@@ -6,8 +6,6 @@ import chalk from 'chalk';
 
 // use for important parts of text
 const highlight = chalk.yellow.bold;
-// use for questions
-const hlQuestion = chalk.inverse;
 // use to mark successful results
 const hlSuccess = chalk.green.bold;
 // use to mark fails
@@ -30,6 +28,22 @@ const multiplication = (a, b) => a * b;
 const substraction = (a, b) => a - b;
 // division
 const division = (a, b) => a / b;
+// find GCD
+const gcd = (a, b) => {
+  const divisor = a > b ? b : a;
+
+  const findGCD = (m, n, div) => {
+    if (div === 0) {
+      return 1;
+    }
+    if ((m % div === 0) && (n % div === 0)) {
+      return div;
+    }
+    return findGCD(m, n, div - 1);
+  };
+
+  return findGCD(a, b, divisor);
+};
 
 
 // User interaction functions
@@ -66,8 +80,8 @@ const finalMessage = (bool, userName) => {
 
 export {
   welcome, ask, greetings, getUserName, highlight,
-  hlQuestion, hlSuccess, hlFail, hlImportant, getRandomNum,
+  hlSuccess, hlFail, hlImportant, getRandomNum,
   isEven, addition, multiplication, substraction,
   division, isAnswerCorrect, message, finalMessage,
-  question, answer,
+  question, answer, gcd,
 };

@@ -1,6 +1,7 @@
 import * as cm from './common';
 import brainEven from './games/even';
 import brainCalc from './games/calc';
+import brainGcd from './games/gcd';
 
 // list of the games
 const games = [
@@ -15,6 +16,12 @@ const games = [
     name: 'calc',
     fn: brainCalc,
     rules: '\nGame Rules 🧮\nType the expression result.\n',
+  },
+  {
+    number: '3',
+    name: 'gcd',
+    fn: brainGcd,
+    rules: '\nGame Rules 💭\nFind the greatest common divisor of the given numbers.\n',
   },
 ];
 
@@ -71,6 +78,9 @@ const main = () => {
       game(selectedGame, attempts);
       break;
     case '2':
+      game(selectedGame, attempts);
+      break;
+    case '3':
       game(selectedGame, attempts);
       break;
     default:
