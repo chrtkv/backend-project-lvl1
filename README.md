@@ -8,9 +8,9 @@
 ```
 npm install -g be-project-lvl1-chertkov@0.0.1
 ```
-[![Installation](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ.svg)](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ)
+[![Installation](gif/install.gif)](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ)
 # Demo
 ### Successful Game
-[![Successful game](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw.svg)](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)
+[![Successful game](gif/success.gif)](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)
 ### Failed Game
-[![Failed game](https://asciinema.org/a/NPkh5hhgYdbXohQJXYTifGJsH.svg)](https://asciinema.org/a/NPkh5hhgYdbXohQJXYTifGJsH)
+[![Failed game](gif/fail.gif)](https://asciinema.org/a/NPkh5hhgYdbXohQJXYTifGJsH)
