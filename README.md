@@ -4,14 +4,13 @@
 
 [![Build Status](https://travis-ci.org/kirill-chertkov/backend-project-lvl1.svg?branch=master)](https://travis-ci.org/kirill-chertkov/backend-project-lvl1)
 
-## Installation
+# Installation
 ```
-npm uninstall -g be-project-lvl1-chertkov@0.0.1
+npm install -g be-project-lvl1-chertkov@0.0.1
 ```
-[![Installation asciinema record](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ)](gif/install.gif)
-
+[![Installation](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ.svg)](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ)
 # Demo
-## Successful Game
-[![Successful game](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)](gif/success.gif)
-## Failed Game
-[![Failed game](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)](gif/fail.gif)
+### Successful Game
+[![Successful game](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw.svg)](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)
+### Failed Game
+[![Failed game](https://asciinema.org/a/NPkh5hhgYdbXohQJXYTifGJsH.svg)](https://asciinema.org/a/NPkh5hhgYdbXohQJXYTifGJsH)
