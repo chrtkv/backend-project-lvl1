@@ -5,4 +5,13 @@
 [![Build Status](https://travis-ci.org/kirill-chertkov/backend-project-lvl1.svg?branch=master)](https://travis-ci.org/kirill-chertkov/backend-project-lvl1)
 
 ## Installation
-[Installation asciinema record](gif/install.gif)
+```
+npm uninstall -g be-project-lvl1-chertkov@0.0.1
+```
+[![Installation asciinema record](https://asciinema.org/a/evwhz2xu8y5EONufn8GIkssZJ)](gif/install.gif)]
+
+# Demo
+## Successful Game
+[![Installation asciinema record](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)](gif/success.gif)]
+## Failed Game
+[![Installation asciinema record](https://asciinema.org/a/eRHWS9fIMLaJ7OIKHKKk7BHGw)](gif/fail.gif)]
