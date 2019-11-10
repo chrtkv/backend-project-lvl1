@@ -6,7 +6,7 @@ const brainProgression = () => {
   const start = cm.getRandomNum(100);
   // generate random number for progression step
   let step = cm.getRandomNum(10);
-  step = step === 0 ? 2 : cm.getRandomNum(10);
+  step = step === 0 ? 2 : step;
   // create progression
   const progression = cm.makeProgression(start, step);
   // generate number for 'missed' progression element

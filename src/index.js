@@ -8,41 +8,41 @@ import brainPrime from './games/prime';
 // list of the games
 const games = [
   {
-    number: '1',
-    name: 'even',
+    id: 1,
+    name: 'Evenness Check',
     fn: brainEven,
     rules: `\nGame Rules 🎲\nAnswer ${cm.highlight('"yes"')} if the number is even, otherwise answer ${cm.highlight('"no"')}.\n`,
   },
   {
-    number: '2',
-    name: 'calc',
+    id: 2,
+    name: 'Calculator',
     fn: brainCalc,
-    rules: '\nGame Rules 🧮\nType the expression result.\n',
+    rules: '\nGame Rules 🧮\nCalculate the expression result.\n',
   },
   {
-    number: '3',
-    name: 'gcd',
+    id: 3,
+    name: 'Find GCD',
     fn: brainGcd,
     rules: '\nGame Rules 💭\nFind the greatest common divisor of the given numbers.\n',
   },
   {
-    number: '4',
-    name: 'progression',
+    id: 4,
+    name: 'Arithmetic Progression',
     fn: brainProgression,
-    rules: '\nGame Rules 📶\nWhat number is missing in the progression?\n',
+    rules: '\nGame Rules 📶\nFind the missing number in the progression?\n',
   },
   {
-    number: '5',
-    name: 'prime',
+    id: 5,
+    name: 'Prime Number',
     fn: brainPrime,
     rules: `\nGame Rules 🔢\nAnswer ${cm.highlight('"yes"')} if the given number is prime. Otherwise answer ${cm.highlight('"no"')}.\n`,
   },
 ];
 
 // game function
-const game = (gameNumber, attempts = 3) => {
+const game = (gameId, attempts = 3) => {
   // select game properties from the array
-  const selectedGame = games.find((gameItem) => gameItem.number === gameNumber);
+  const selectedGame = games.find(({ id }) => id === gameId);
   // print rules of the game
   const gameRules = selectedGame.rules;
   console.log(gameRules);
@@ -79,18 +79,18 @@ const game = (gameNumber, attempts = 3) => {
 const main = () => {
   // welcome to the gamer
   cm.welcome();
+  // collect games' names for a menu
+  const gameList = games.map(({ name }) => name);
   // show game menu
-  const selectedGame = cm.ask(`\nPlease, select game number.
-  1. Even Game
-  2. Calc Game
-`);
-  // select number of attempts
-  const attempts = 3;
-  // run appropriate game
-  if (games.find((gameItem) => gameItem.number === selectedGame)) {
-    game(selectedGame, attempts);
+  const selectedGame = cm.makeMenu(gameList, 'What game do you want to play?', { cancel: cm.hlFail('EXIT') });
+  // check if EXIT selected
+  if (selectedGame === -1) {
+    console.log(cm.highlight('\nSee you later!\n'));
   } else {
-    console.log('Sorry, enter correct game number');
+    // select number of attempts
+    const attempts = cm.ask('How many rounds you want to play?');
+    // run appropriate game. Add 1 cause games ids starting from 1.
+    game(selectedGame + 1, attempts);
   }
 };
 

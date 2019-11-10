@@ -69,7 +69,7 @@ const isPrime = (number) => {
 // User interaction functions
 
 // welcome the user
-const welcome = () => console.log(hlImportant('\nWelcome to the Brain Games!'));
+const welcome = () => console.log(hlImportant('\nWelcome to the Brain Games!🧠'));
 // ask the user
 const ask = (question) => readlineSync.question(`${question} `);
 // get user name
@@ -92,10 +92,12 @@ const message = (bool, userAnswer, correctAnswer) => {
 // print final message
 const finalMessage = (bool, userName) => {
   if (bool) {
-    return hlSuccess(`\nCongratulations, ${userName}! 💪\n`);
+    return hlSuccess(`Congratulations, ${userName}! 💪\n`);
   }
   return hlSuccess(`Let's try again, ${userName}! 💪\n`);
 };
+// display menu
+const makeMenu = (items, query, options) => readlineSync.keyInSelect(items, query, options);
 
 
 export {
@@ -104,4 +106,5 @@ export {
   isEven, addition, multiplication, substraction,
   division, isAnswerCorrect, message, finalMessage,
   question, answer, gcd, makeProgression, isPrime,
+  makeMenu,
 };
