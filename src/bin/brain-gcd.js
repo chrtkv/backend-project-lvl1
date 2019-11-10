@@ -3,4 +3,4 @@ import { welcome } from '../common';
 import { game } from '..';
 
 welcome();
-game('3');
+game(3);
