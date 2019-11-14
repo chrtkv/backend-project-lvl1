@@ -32,7 +32,7 @@ const menu = () => {
     // select number of attempts
     const attempts = cm.ask('How many rounds you want to play?');
     // run game
-    engine(selectedGame, selectedGame.fn, attempts);
+    engine(selectedGame, attempts);
   }
 };
 

@@ -18,7 +18,7 @@ const gameProperties = {
 };
 
 const run = () => {
-  engine(gameProperties, brainPrime);
+  engine(gameProperties);
 };
 
 export { run, gameProperties };

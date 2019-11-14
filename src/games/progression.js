@@ -30,7 +30,7 @@ const gameProperties = {
 };
 
 const run = () => {
-  engine(gameProperties, brainProgression);
+  engine(gameProperties);
 };
 
 export { run, gameProperties };

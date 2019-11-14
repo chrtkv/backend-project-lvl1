@@ -2,11 +2,13 @@ import * as cm from './common';
 
 
 // game engine function
-const engine = (properties, func, attempts = 3) => {
+const engine = (properties, attempts = 3) => {
   cm.welcome();
   // print rules of the game
   const gameRules = properties.rules;
   console.log(gameRules);
+  // extract game function
+  const gameFunction = properties.fn;
   // request user name
   const name = cm.getUserName();
   // greet the user
@@ -20,7 +22,7 @@ const engine = (properties, func, attempts = 3) => {
   // start the game loop
   while (attemptsNumber > 0) {
     // get a question and correct answer from the game function
-    const { question, answer } = func();
+    const { question, answer } = gameFunction();
     // print a question
     cm.question(question);
     // ask the user an answer

@@ -52,7 +52,7 @@ const gameProperties = {
 };
 
 const run = () => {
-  engine(gameProperties, brainCalc);
+  engine(gameProperties);
 };
 
 export { run, gameProperties };
