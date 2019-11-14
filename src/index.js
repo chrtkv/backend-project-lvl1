@@ -1,8 +1,9 @@
 import * as cm from './common';
 
 
-// game function
+// game engine function
 const game = (properties, func, attempts = 3) => {
+  cm.welcome();
   // print rules of the game
   const gameRules = properties.rules;
   console.log(gameRules);

@@ -1,5 +1,5 @@
 import * as cm from '../common';
-import { game } from '..';
+import game from '..';
 
 
 const brainCalc = () => {
@@ -53,6 +53,5 @@ const gameProperties = {
 };
 
 export default () => {
-  cm.welcome();
   game(gameProperties, brainCalc);
 };
