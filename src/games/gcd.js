@@ -1,4 +1,6 @@
 import * as cm from '../common';
+import { game } from '..';
+
 
 const brainGcd = () => {
   // generate two random numbers
@@ -12,4 +14,14 @@ const brainGcd = () => {
   return { question: questionString, answer: correctAnswer.toString() };
 };
 
-export default brainGcd;
+const gameProperties = {
+  id: 3,
+  name: 'Find GCD',
+  fn: brainGcd,
+  rules: '\nGame Rules 💭\nFind the greatest common divisor of the given numbers.\n',
+};
+
+export default () => {
+  cm.welcome();
+  game(gameProperties, brainGcd);
+};

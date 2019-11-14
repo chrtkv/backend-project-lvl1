@@ -1,4 +1,6 @@
 import * as cm from '../common';
+import { game } from '..';
+
 
 const brainCalc = () => {
   // define operations
@@ -43,4 +45,14 @@ const brainCalc = () => {
   return { question: expression, answer: correctAnswer };
 };
 
-export default brainCalc;
+const gameProperties = {
+  id: 2,
+  name: 'Calculator',
+  fn: brainCalc,
+  rules: '\nGame Rules 🧮\nCalculate the expression result.\n',
+};
+
+export default () => {
+  cm.welcome();
+  game(gameProperties, brainCalc);
+};

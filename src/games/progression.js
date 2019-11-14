@@ -1,4 +1,5 @@
 import * as cm from '../common';
+import { game } from '..';
 
 
 const brainProgression = () => {
@@ -22,4 +23,14 @@ const brainProgression = () => {
   return { question: questionString, answer: correctAnswer };
 };
 
-export default brainProgression;
+const gameProperties = {
+  id: 4,
+  name: 'Arithmetic Progression',
+  fn: brainProgression,
+  rules: '\nGame Rules 📶\nFind the missing number in the progression?\n',
+};
+
+export default () => {
+  cm.welcome();
+  game(gameProperties, brainProgression);
+};
