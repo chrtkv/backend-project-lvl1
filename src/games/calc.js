@@ -46,12 +46,13 @@ const brainCalc = () => {
 };
 
 const gameProperties = {
-  id: 2,
   name: 'Calculator',
   fn: brainCalc,
   rules: '\nGame Rules 🧮\nCalculate the expression result.\n',
 };
 
-export default () => {
+const run = () => {
   engine(gameProperties, brainCalc);
 };
+
+export { run, gameProperties };

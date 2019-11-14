@@ -12,12 +12,13 @@ const brainPrime = () => {
 };
 
 const gameProperties = {
-  id: 5,
   name: 'Prime Number',
   fn: brainPrime,
   rules: `\nGame Rules 🔢\nAnswer ${cm.highlight('"yes"')} if the given number is prime. Otherwise answer ${cm.highlight('"no"')}.\n`,
 };
 
-export default () => {
+const run = () => {
   engine(gameProperties, brainPrime);
 };
+
+export { run, gameProperties };
