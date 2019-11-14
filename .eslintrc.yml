@@ -9,5 +9,9 @@ globals:
 parserOptions:
   ecmaVersion: 2018
   sourceType: module
+plugins:
+  - babel
+parser:
+  babel-eslint
 rules:
   no-console: 0

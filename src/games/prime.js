@@ -1,4 +1,6 @@
 import * as cm from '../common';
+import game from '..';
+
 
 const brainPrime = () => {
   // generate number for the question
@@ -9,4 +11,13 @@ const brainPrime = () => {
   return { question: questionNumber, answer: correctAnswer };
 };
 
-export default brainPrime;
+const gameProperties = {
+  id: 5,
+  name: 'Prime Number',
+  fn: brainPrime,
+  rules: `\nGame Rules 🔢\nAnswer ${cm.highlight('"yes"')} if the given number is prime. Otherwise answer ${cm.highlight('"no"')}.\n`,
+};
+
+export default () => {
+  game(gameProperties, brainPrime);
+};
