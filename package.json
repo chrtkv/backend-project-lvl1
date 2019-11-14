@@ -2,7 +2,6 @@
   "name": "be-project-lvl1-chertkov",
   "version": "0.0.11",
   "description": "The first Hexlet project",
-  "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -29,7 +28,7 @@
     "project",
     "brain",
     "games",
-    "level"
+    "level1"
   ],
   "author": "Kirill Chertkov",
   "license": "ISC",
