@@ -15,12 +15,13 @@ const brainGcd = () => {
 };
 
 const gameProperties = {
-  id: 3,
   name: 'Find GCD',
   fn: brainGcd,
   rules: '\nGame Rules 💭\nFind the greatest common divisor of the given numbers.\n',
 };
 
-export default () => {
+const run = () => {
   engine(gameProperties, brainGcd);
 };
+
+export { run, gameProperties };

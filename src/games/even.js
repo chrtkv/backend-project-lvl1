@@ -11,12 +11,13 @@ const brainEven = () => {
 };
 
 const gameProperties = {
-  id: 1,
   name: 'Evenness Check',
   fn: brainEven,
   rules: `\nGame Rules 🎲\nAnswer ${cm.highlight('"yes"')} if the number is even, otherwise answer ${cm.highlight('"no"')}.\n`,
 };
 
-export default () => {
+const run = () => {
   engine(gameProperties, brainEven);
 };
+
+export { run, gameProperties };

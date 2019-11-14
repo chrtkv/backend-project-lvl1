@@ -24,12 +24,13 @@ const brainProgression = () => {
 };
 
 const gameProperties = {
-  id: 4,
   name: 'Arithmetic Progression',
   fn: brainProgression,
   rules: '\nGame Rules 📶\nFind the missing number in the progression?\n',
 };
 
-export default () => {
+const run = () => {
   engine(gameProperties, brainProgression);
 };
+
+export { run, gameProperties };

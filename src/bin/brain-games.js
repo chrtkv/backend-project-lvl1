@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { welcome } from '../common';
+import menu from '../menu';
 
-welcome();
+menu();
