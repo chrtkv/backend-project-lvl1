@@ -1,5 +1,5 @@
 import * as cm from '../common';
-import game from '..';
+import engine from '..';
 
 
 const brainCalc = () => {
@@ -53,5 +53,5 @@ const gameProperties = {
 };
 
 export default () => {
-  game(gameProperties, brainCalc);
+  engine(gameProperties, brainCalc);
 };

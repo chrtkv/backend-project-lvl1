@@ -1,5 +1,5 @@
 import * as cm from '../common';
-import game from '..';
+import engine from '..';
 
 
 const brainPrime = () => {
@@ -19,5 +19,5 @@ const gameProperties = {
 };
 
 export default () => {
-  game(gameProperties, brainPrime);
+  engine(gameProperties, brainPrime);
 };

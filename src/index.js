@@ -2,7 +2,7 @@ import * as cm from './common';
 
 
 // game engine function
-const game = (properties, func, attempts = 3) => {
+const engine = (properties, func, attempts = 3) => {
   cm.welcome();
   // print rules of the game
   const gameRules = properties.rules;
@@ -37,4 +37,4 @@ const game = (properties, func, attempts = 3) => {
 };
 
 
-export default game;
+export default engine;
