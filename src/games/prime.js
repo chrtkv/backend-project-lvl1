@@ -17,8 +17,6 @@ const gameProperties = {
   rules: `\nGame Rules 🔢\nAnswer ${cm.highlight('"yes"')} if the given number is prime. Otherwise answer ${cm.highlight('"no"')}.\n`,
 };
 
-const run = () => {
+export default () => {
   engine(gameProperties);
 };
-
-export { run, gameProperties };

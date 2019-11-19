@@ -16,8 +16,6 @@ const gameProperties = {
   rules: `\nGame Rules 🎲\nAnswer ${cm.highlight('"yes"')} if the number is even, otherwise answer ${cm.highlight('"no"')}.\n`,
 };
 
-const run = () => {
+export default () => {
   engine(gameProperties);
 };
-
-export { run, gameProperties };

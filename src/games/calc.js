@@ -51,8 +51,6 @@ const gameProperties = {
   rules: '\nGame Rules 🧮\nCalculate the expression result.\n',
 };
 
-const run = () => {
+export default () => {
   engine(gameProperties);
 };
-
-export { run, gameProperties };

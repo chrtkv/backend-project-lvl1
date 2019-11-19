@@ -20,8 +20,6 @@ const gameProperties = {
   rules: '\nGame Rules 💭\nFind the greatest common divisor of the given numbers.\n',
 };
 
-const run = () => {
+export default () => {
   engine(gameProperties);
 };
-
-export { run, gameProperties };

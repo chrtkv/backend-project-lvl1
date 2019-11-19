@@ -29,8 +29,6 @@ const gameProperties = {
   rules: '\nGame Rules 📶\nFind the missing number in the progression?\n',
 };
 
-const run = () => {
+export default () => {
   engine(gameProperties);
 };
-
-export { run, gameProperties };
