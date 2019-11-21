@@ -3,15 +3,15 @@ import readlineSync from 'readline-sync';
 // User interaction functions
 
 // welcome the user
-const welcome = () => console.log('\nWelcome to the Brain Games!');
+const welcome = () => '\nWelcome to the Brain Games!';
 // ask the user
 const ask = (question) => readlineSync.question(`${question} `);
 // get user name
 const getUserName = () => ask('May I have your name?');
 // say hello to the user
-const greetings = (name) => console.log(`Hello, ${name}!\n`);
+const greetings = (name) => `Hello, ${name}!\n`;
 // question template
-const askQuestion = (content) => console.log(`Question: ${content}`);
+const askQuestion = (content) => `Question: ${content}`;
 // answer request template
 const requestAnswer = () => ask('Your answer:');
 // answer check
@@ -33,13 +33,13 @@ const finalMessage = (correct, userName) => {
 
 // game engine function
 const engine = (gameFunction, description, attempts) => {
-  welcome();
+  console.log(welcome());
   // print rules of the game
   console.log(description);
   // request user name
   const name = getUserName();
   // greet the user
-  greetings(name);
+  console.log(greetings(name));
 
   // set the game result variable
   let success = true;
@@ -49,7 +49,7 @@ const engine = (gameFunction, description, attempts) => {
     // get a question and correct answer from the game function
     const { question, answer } = gameFunction();
     // print a question
-    askQuestion(question);
+    console.log(askQuestion(question));
     // ask the user an answer
     const userAnswer = requestAnswer();
     // check the round results
