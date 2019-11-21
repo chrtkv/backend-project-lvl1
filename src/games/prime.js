@@ -1,22 +1,31 @@
-import * as cm from '../common';
+import getRandomNum from '../common';
 import engine from '..';
 
+// check if number is prime
+const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
+  for (let i = 2; i < number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
-const brainPrime = () => {
+const gameFunction = () => {
   // generate number for the question
-  const questionNumber = cm.getRandomNum(500);
+  const question = getRandomNum(0, 500);
   // generate correct answer
-  const correctAnswer = cm.isPrime(questionNumber) ? 'yes' : 'no';
+  const answer = isPrime(question) ? 'yes' : 'no';
 
-  return { question: questionNumber, answer: correctAnswer };
+  return { question, answer };
 };
 
-const gameProperties = {
-  name: 'Prime Number',
-  fn: brainPrime,
-  rules: `\nGame Rules 🔢\nAnswer ${cm.highlight('"yes"')} if the given number is prime. Otherwise answer ${cm.highlight('"no"')}.\n`,
-};
+const description = '\nAnswer "yes" if the given number is prime. Otherwise answer "no".\n';
+const attempts = 3;
 
 export default () => {
-  engine(gameProperties);
+  engine(gameFunction, description, attempts);
 };

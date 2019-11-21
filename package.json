@@ -1,6 +1,6 @@
 {
   "name": "be-project-lvl1-chertkov",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "The first Hexlet project",
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
@@ -47,7 +47,6 @@
     "eslint-plugin-babel": "^5.3.0"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
     "readline-sync": "^1.4.10"
   }
 }

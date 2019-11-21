@@ -1,21 +1,20 @@
-import * as cm from '../common';
+import getRandomNum from '../common';
 import engine from '..';
 
+// check if number is even
+const isEven = (num) => (num % 2) === 0;
 
-const brainEven = () => {
+const gameFunction = () => {
   // generate question number
-  const number = cm.getRandomNum();
+  const question = getRandomNum();
   // calculate correct answer
-  const correctAnswer = cm.isEven(number) ? 'yes' : 'no';
-  return { question: number, answer: correctAnswer };
+  const answer = isEven(question) ? 'yes' : 'no';
+  return { question, answer };
 };
 
-const gameProperties = {
-  name: 'Evenness Check',
-  fn: brainEven,
-  rules: `\nGame Rules 🎲\nAnswer ${cm.highlight('"yes"')} if the number is even, otherwise answer ${cm.highlight('"no"')}.\n`,
-};
+const description = '\nAnswer "yes" if the number is even, otherwise answer "no".\n';
+const attempts = 3;
 
 export default () => {
-  engine(gameProperties);
+  engine(gameFunction, description, attempts);
 };

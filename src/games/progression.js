@@ -1,34 +1,40 @@
-import * as cm from '../common';
+import getRandomNum from '../common';
 import engine from '..';
 
+// make progression
+const makeProgression = (start, step, size) => {
+  const result = [];
+  for (let i = start; result.length < size; i += step) {
+    result.push(i);
+  }
+  return result;
+};
 
-const brainProgression = () => {
+const gameFunction = () => {
   // generate random number for progression start
-  const start = cm.getRandomNum(100);
+  const start = getRandomNum(0, 100);
   // generate random number for progression step
-  let step = cm.getRandomNum(10);
-  step = step === 0 ? 2 : step;
+  const step = getRandomNum(2, 10);
+  // progression size
+  const size = 10;
   // create progression
-  const progression = cm.makeProgression(start, step);
+  const progression = makeProgression(start, step, size);
   // generate number for 'missed' progression element
-  const missed = cm.getRandomNum(9);
+  const missed = getRandomNum(0, size - 1);
   // save correct answer
-  const correctAnswer = progression[missed].toString();
+  const answer = progression[missed].toString();
   // make array for question string
   const questionStringArr = progression;
   questionStringArr[missed] = '..';
   // make question string
-  const questionString = questionStringArr.join(' ');
+  const question = questionStringArr.join(' ');
 
-  return { question: questionString, answer: correctAnswer };
+  return { question, answer };
 };
 
-const gameProperties = {
-  name: 'Arithmetic Progression',
-  fn: brainProgression,
-  rules: '\nGame Rules 📶\nFind the missing number in the progression?\n',
-};
+const description = '\nFind the missing number in the progression.\n';
+const attempts = 3;
 
 export default () => {
-  engine(gameProperties);
+  engine(gameFunction, description, attempts);
 };

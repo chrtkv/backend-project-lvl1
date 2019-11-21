@@ -1,25 +1,38 @@
-import * as cm from '../common';
+import getRandomNum from '../common';
 import engine from '..';
 
+// find GCD
+const gcd = (a, b) => {
+  const divisor = a > b ? b : a;
 
-const brainGcd = () => {
+  const findGCD = (m, n, div) => {
+    if (div === 0) {
+      return 1;
+    }
+    if ((m % div === 0) && (n % div === 0)) {
+      return div;
+    }
+    return findGCD(m, n, div - 1);
+  };
+
+  return findGCD(a, b, divisor);
+};
+
+const gameFunction = () => {
   // generate two random numbers
-  const firstNumber = cm.getRandomNum();
-  const secondNumber = cm.getRandomNum();
+  const firstNumber = getRandomNum();
+  const secondNumber = getRandomNum();
   // generate question string
-  const questionString = `${firstNumber} ${secondNumber}`;
+  const question = `${firstNumber} ${secondNumber}`;
   // find GCD
-  const correctAnswer = cm.gcd(firstNumber, secondNumber);
+  const answer = gcd(firstNumber, secondNumber).toString();
 
-  return { question: questionString, answer: correctAnswer.toString() };
+  return { question, answer };
 };
 
-const gameProperties = {
-  name: 'Find GCD',
-  fn: brainGcd,
-  rules: '\nGame Rules 💭\nFind the greatest common divisor of the given numbers.\n',
-};
+const description = '\nFind the greatest common divisor of the given numbers.\n';
+const attempts = 3;
 
 export default () => {
-  engine(gameProperties);
+  engine(gameFunction, description, attempts);
 };

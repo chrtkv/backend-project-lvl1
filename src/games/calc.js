@@ -1,56 +1,45 @@
-import * as cm from '../common';
+import getRandomNum from '../common';
 import engine from '..';
 
+// addition
+const addition = (a, b) => a + b;
+// multiplication
+const multiplication = (a, b) => a * b;
+// substraction
+const substraction = (a, b) => a - b;
 
-const brainCalc = () => {
+const gameFunction = () => {
   // define operations
   const operations = [
-    { fn: cm.addition, sign: '+' },
-    { fn: cm.multiplication, sign: '*' },
-    { fn: cm.substraction, sign: '-' },
-    { fn: cm.division, sign: '/' },
+    { fn: addition, sign: '+' },
+    { fn: multiplication, sign: '*' },
+    { fn: substraction, sign: '-' },
   ];
 
+  const firstIndex = 0;
+  const lastIndex = operations.length - 1;
   // generate operation number
-  const operationNumber = cm.getRandomNum(3);
+  const operationNumber = getRandomNum(firstIndex, lastIndex);
   // select operation function
   const operation = operations[operationNumber].fn;
   // select appropriate sign
   const operationSign = operations[operationNumber].sign;
   // generate first random number
-  let firstNumber = cm.getRandomNum();
+  const firstNumber = getRandomNum();
   // generate second random number
-  let secondNumber = cm.getRandomNum();
-
-  // integer division primitive realization
-  if (operationNumber === 3) {
-    // check that the second number isn't zero
-    secondNumber = secondNumber === 0 ? 1 : secondNumber;
-    // increase it while division remaind isn't equal zero
-    while (firstNumber % secondNumber !== 0) {
-      // check that the first number is greater than the second, if not swap them
-      if (secondNumber > firstNumber) {
-        [secondNumber, firstNumber] = [firstNumber, secondNumber];
-      } else {
-        firstNumber += 1;
-      }
-    }
-  }
+  const secondNumber = getRandomNum();
 
   // generate expression string
-  const expression = `${firstNumber} ${operationSign} ${secondNumber}`;
+  const question = `${firstNumber} ${operationSign} ${secondNumber}`;
   // calculate correct answer
-  const correctAnswer = operation(firstNumber, secondNumber).toString();
+  const answer = operation(firstNumber, secondNumber).toString();
 
-  return { question: expression, answer: correctAnswer };
+  return { question, answer };
 };
 
-const gameProperties = {
-  name: 'Calculator',
-  fn: brainCalc,
-  rules: '\nGame Rules 🧮\nCalculate the expression result.\n',
-};
+const description = '\nCalculate the expression result.\n';
+const attempts = 3;
 
 export default () => {
-  engine(gameProperties);
+  engine(gameFunction, description, attempts);
 };
