@@ -31,8 +31,7 @@ const gameFunction = () => {
 };
 
 const description = '\nFind the greatest common divisor of the given numbers.\n';
-const attempts = 3;
 
 export default () => {
-  engine(gameFunction, description, attempts);
+  engine(gameFunction, description);
 };

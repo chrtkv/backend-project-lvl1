@@ -13,8 +13,7 @@ const gameFunction = () => {
 };
 
 const description = '\nAnswer "yes" if the number is even, otherwise answer "no".\n';
-const attempts = 3;
 
 export default () => {
-  engine(gameFunction, description, attempts);
+  engine(gameFunction, description);
 };

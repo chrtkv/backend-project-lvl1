@@ -38,8 +38,7 @@ const gameFunction = () => {
 };
 
 const description = '\nCalculate the expression result.\n';
-const attempts = 3;
 
 export default () => {
-  engine(gameFunction, description, attempts);
+  engine(gameFunction, description);
 };

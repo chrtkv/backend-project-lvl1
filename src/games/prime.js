@@ -24,8 +24,7 @@ const gameFunction = () => {
 };
 
 const description = '\nAnswer "yes" if the given number is prime. Otherwise answer "no".\n';
-const attempts = 3;
 
 export default () => {
-  engine(gameFunction, description, attempts);
+  engine(gameFunction, description);
 };

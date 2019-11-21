@@ -31,8 +31,11 @@ const finalMessage = (correct, userName) => {
   return `Let's try again, ${userName}!\n`;
 };
 
+// set number of rounds
+const attempts = 3;
+
 // game engine function
-const engine = (gameFunction, description, attempts) => {
+const engine = (gameFunction, description) => {
   console.log(welcome());
   // print rules of the game
   console.log(description);

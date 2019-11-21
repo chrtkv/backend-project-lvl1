@@ -33,8 +33,7 @@ const gameFunction = () => {
 };
 
 const description = '\nFind the missing number in the progression.\n';
-const attempts = 3;
 
 export default () => {
-  engine(gameFunction, description, attempts);
+  engine(gameFunction, description);
 };
