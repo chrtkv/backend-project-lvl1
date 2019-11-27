@@ -1,7 +1,6 @@
 import getRandomNum from '../common';
 import engine from '..';
 
-// find GCD
 const gcd = (a, b) => {
   const divisor = a > b ? b : a;
 
@@ -19,18 +18,15 @@ const gcd = (a, b) => {
 };
 
 const gameFunction = () => {
-  // generate two random numbers
   const firstNumber = getRandomNum();
   const secondNumber = getRandomNum();
-  // generate question string
   const question = `${firstNumber} ${secondNumber}`;
-  // find GCD
   const answer = gcd(firstNumber, secondNumber).toString();
 
   return { question, answer };
 };
 
-const description = '\nFind the greatest common divisor of the given numbers.\n';
+const description = 'Find the greatest common divisor of the given numbers.';
 
 export default () => {
   engine(gameFunction, description);

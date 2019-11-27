@@ -1,7 +1,6 @@
 import getRandomNum from '../common';
 import engine from '..';
 
-// check if number is prime
 const isPrime = (number) => {
   if (number < 2) {
     return false;
@@ -15,15 +14,13 @@ const isPrime = (number) => {
 };
 
 const gameFunction = () => {
-  // generate number for the question
   const question = getRandomNum(0, 500);
-  // generate correct answer
   const answer = isPrime(question) ? 'yes' : 'no';
 
   return { question, answer };
 };
 
-const description = '\nAnswer "yes" if the given number is prime. Otherwise answer "no".\n';
+const description = 'Answer "yes" if the given number is prime. Otherwise answer "no".';
 
 export default () => {
   engine(gameFunction, description);

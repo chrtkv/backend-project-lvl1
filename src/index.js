@@ -1,70 +1,29 @@
 import readlineSync from 'readline-sync';
 
-// User interaction functions
-
-// welcome the user
-const welcome = () => '\nWelcome to the Brain Games!';
-// ask the user
-const ask = (question) => readlineSync.question(`${question} `);
-// get user name
-const getUserName = () => ask('May I have your name?');
-// say hello to the user
-const greetings = (name) => `Hello, ${name}!\n`;
-// question template
-const askQuestion = (content) => `Question: ${content}`;
-// answer request template
-const requestAnswer = () => ask('Your answer:');
-// answer check
-const isAnswerCorrect = (correctAnswer, userAnswer) => correctAnswer === userAnswer;
-// print message
-const message = (correct, userAnswer, correctAnswer) => {
-  if (correct) {
-    return 'Correct!\n';
-  }
-  return `\n"${userAnswer}" is wrong answer. Correct answer was "${correctAnswer}".\n`;
-};
-// print final message
-const finalMessage = (correct, userName) => {
-  if (correct) {
-    return `Congratulations, ${userName}!\n`;
-  }
-  return `Let's try again, ${userName}!\n`;
-};
-
 // set number of rounds
 const attempts = 3;
 
-// game engine function
 const engine = (gameFunction, description) => {
-  console.log(welcome());
-  // print rules of the game
-  console.log(description);
-  // request user name
-  const name = getUserName();
-  // greet the user
-  console.log(greetings(name));
-
-  // set the game result variable
-  let success = true;
+  console.log('\nWelcome to the Brain Games!');
+  console.log(`${description}\n`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!\n`);
 
   // start the game loop
   for (let i = attempts; i > 0; i -= 1) {
-    // get a question and correct answer from the game function
     const { question, answer } = gameFunction();
-    // print a question
-    console.log(askQuestion(question));
-    // ask the user an answer
-    const userAnswer = requestAnswer();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     // check the round results
-    success = isAnswerCorrect(answer, userAnswer);
-    // Set rest of attempts number to zero if user's answer was wrong
-    i = success ? i : 0;
-    // print result message
-    console.log(message(success, userAnswer, answer));
+    if (answer !== userAnswer) {
+      console.log(`\n"${userAnswer}" is wrong answer. Correct answer was "${answer}".\n`);
+      console.log(`Let's try again, ${name}!\n`);
+      return;
+    }
+    console.log('Correct!\n');
   }
   // print final message
-  console.log(finalMessage(success, name));
+  console.log(`Congratulations, ${name}!\n`);
 };
-
 
 export default engine;
